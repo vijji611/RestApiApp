@@ -12,7 +12,7 @@
 	<artifactId>RestApiApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RestApiApp</name>
-	<description>Rest API Implementation</description>
+	<description>Rest API Implementation CI</description>
 
 	<properties>
 		<java.version>8</java.version>
