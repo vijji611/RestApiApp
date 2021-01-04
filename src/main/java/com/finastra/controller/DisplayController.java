@@ -9,7 +9,7 @@ public class DisplayController {
 
 	@RequestMapping(value = "/test",method = RequestMethod.GET)
     public String getinitialchangerequest(){
-		System.out.println("Welcome Rest Controller test CI....0.");
+		System.out.println("Welcome Rest Controller test CI.....");
 		return "welcome REST Controller";
 	}
 }
