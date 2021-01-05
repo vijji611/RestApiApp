@@ -9,8 +9,7 @@ pipeline {
                 bat 'mvn -B -DskipTests clean'
             }
         }
-    }
-    stage('Approval') {
+        stage('Approval') {
             // no agent, so executors are not used up when waiting for approvals
             agent none
             steps {
@@ -20,4 +19,6 @@ pipeline {
                 }
             }
         }
+    }
+    
 }
