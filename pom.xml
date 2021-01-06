@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RestApiApp</name>
 	<description>Rest API Implementation to Test CI Build</description>
-
+	<packaging>war</packaging>
 	<properties>
 		<java.version>8</java.version>
 	</properties>
