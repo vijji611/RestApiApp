@@ -1,3 +1,4 @@
+ def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
 pipeline {
     agent any
     tools{
@@ -16,11 +17,10 @@ pipeline {
         
         stage('deploy') {
             steps {
-                bat 'echo f | xcopy target\\RestApiApp-0.0.1-SNAPSHOT.war C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\webapps\\RestApiApp.war'
+                bat 'copy target\\RestApiApp-0.0.1-SNAPSHOT.war C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\webapps\\RestApiApp.war'
             }
         }
         stage('start tomcat server') {
-            def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
             steps {
                 bat '${tomcatPathBin}\\startup.bat'
             }
