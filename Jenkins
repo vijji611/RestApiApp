@@ -5,7 +5,6 @@ pipeline {
     }
     environment{
         def tomcatPath = 'C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\webapps'
-        def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
     }
     stages {
         stage('Build') {
@@ -14,16 +13,7 @@ pipeline {
                 bat 'mvn package'
             }
         }
-        stage('Approval') {
-            // no agent, so executors are not used up when waiting for approvals
-            agent none
-            steps {
-                script {
-                    def deploymentDelay = input id: 'Deploy', message: 'Deploy to production?', submitter: 'admin,admin', parameters: [choice(choices: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'], description: 'Hours to delay deployment?', name: 'deploymentDelay')]
-                    sleep time: deploymentDelay.toInteger(), unit: 'HOURS'
-                }
-            }
-        }
+        
         stage('deploy') {
             steps {
                 bat 'echo f | xcopy target\\RestApiApp-0.0.1-SNAPSHOT.war C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\webapps\\RestApiApp.war'
@@ -31,6 +21,7 @@ pipeline {
         }
         stage('start tomcat server') {
             steps {
+                def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
                 bat '${tomcatPathBin}\\startup.bat'
             }
         }
