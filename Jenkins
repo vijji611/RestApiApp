@@ -1,6 +1,6 @@
 pipeline {
-    def tomcatPath = 'C:\Users\u723181\Downloads\apache-tomcat-9.0.41\webapps'
-    def tomcatPathBin ='C:\Users\u723181\Downloads\apache-tomcat-9.0.41\bin'
+    def tomcatPath = 'C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\webapps'
+    def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
     agent any
     tools{
         jdk "java8"
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                bat 'copy target\RestApiApp-0.0.1-SNAPSHOT.war \"${tomcatPath}\RestApiApp-0.0.1-SNAPSHOT.war\"'
+                bat 'copy target\\RestApiApp-0.0.1-SNAPSHOT.war \"${tomcatPath}\\RestApiApp-0.0.1-SNAPSHOT.war\"'
             }
         }
     }
