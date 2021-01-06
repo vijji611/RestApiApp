@@ -1,4 +1,3 @@
- def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
 pipeline {
     agent any
     tools{
@@ -6,6 +5,7 @@ pipeline {
     }
     environment{
         def tomcatPath = 'C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\webapps'
+        def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
     }
     stages {
         stage('Build') {
@@ -22,7 +22,8 @@ pipeline {
         }
         stage('start tomcat server') {
             steps {
-                bat '${tomcatPathBin}\\startup.bat'
+                echo "${env.tomcatPathBin}"
+                bat '${env.tomcatPathBin}\\startup.bat'
             }
         }
     }
