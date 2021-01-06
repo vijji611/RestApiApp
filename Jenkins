@@ -29,6 +29,11 @@ pipeline {
                 bat 'copy target\\RestApiApp-0.0.1-SNAPSHOT.war ${tomcatPath}\\RestApiApp-0.0.1-SNAPSHOT.war'
             }
         }
+        stage('start tomcat server') {
+            steps {
+                bat '${tomcatPathBin}\\startup.bat'
+            }
+        }
     }
     
 }
