@@ -23,7 +23,7 @@ pipeline {
         stage('start tomcat server') {
             steps {
                 echo "${env.tomcatPathBin}"
-                bat '\"${env.tomcatPathBin}\"\\startup.bat'
+                bat 'C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin\\startup.bat'
             }
         }
     }
