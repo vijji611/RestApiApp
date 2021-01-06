@@ -20,8 +20,8 @@ pipeline {
             }
         }
         stage('start tomcat server') {
+            def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
             steps {
-                def tomcatPathBin ='C:\\Users\\u723181\\Downloads\\apache-tomcat-9.0.41\\bin'
                 bat '${tomcatPathBin}\\startup.bat'
             }
         }
