@@ -26,7 +26,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                bat 'xcopy target\\RestApiApp-0.0.1-SNAPSHOT.war ${tomcatPath}\\RestApiApp.war'
+                bat 'echo f | xcopy target\\RestApiApp-0.0.1-SNAPSHOT.war ${tomcatPath}\\RestApiApp.war'
             }
         }
         stage('start tomcat server') {
