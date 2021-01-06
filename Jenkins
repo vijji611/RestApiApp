@@ -22,8 +22,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sshagent(['war-deployer']){
-                }
+                bat 'copy target\RestApiApp-0.0.1-SNAPSHOT.war \"${tomcatPath}\RestApiApp-0.0.1-SNAPSHOT.war\"'
             }
         }
     }
