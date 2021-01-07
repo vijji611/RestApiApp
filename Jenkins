@@ -20,12 +20,6 @@ pipeline {
                 bat 'copy target\\RestApiApp-0.0.1-SNAPSHOT.war \"C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\RestApiApp.war\"'
             }
         }
-        stage('start tomcat server') {
-            steps {
-                echo "${env.tomcatPathBin}"
-                bat '\"C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\bin\\startup.bat\"'
-            }
-        }
     }
     
 }
