@@ -10,6 +10,6 @@ public class DisplayController {
 	@RequestMapping(value = "/test",method = RequestMethod.GET)
     public String getinitialchangerequest(){
 		System.out.println("Welcome Rest Controller test CI.....");
-		return "App Deployed successfully from Jenkins";
+		return "App Deployed successfully from Jenkins...Demo";
 	}
 }
